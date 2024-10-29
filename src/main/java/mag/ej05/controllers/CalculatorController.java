@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class CalculatorController {
 
-    // Variables para almacenar valores a sumar
+    // Variables para almacenar valores a sumar,
+    //Los inicializamos en -1, ya que si no por defecto estaría en 0, y
+    //el cero sí es un valor válido para sumar.
     int sumando1 = -1;
     int sumando2 = -1;
 
@@ -18,7 +20,6 @@ public class CalculatorController {
     public Integer sumar(int num1, int num2) {
         int result = num1 + num2;
         return result;
-
     }
 
     @GetMapping("/")
@@ -56,7 +57,8 @@ public class CalculatorController {
     @GetMapping("/suma")
     public String botonSumar() {
 
-        // Solo permite sumar si hay un primer número
+        // Solo permite sumar si hay un primer número, 
+        //si no, no hace nada
         if (sumando1 != -1) {
             isAdding = true;
         }
@@ -73,6 +75,7 @@ public class CalculatorController {
         model.addAttribute("sumando2", sumando2 == -1 ? "" : sumando2);
 
         // Ahora hacemos un condicional para realizar la operación
+        //Si no se han introducido los sumandos y pulsado el botón +, el = no hará nada.
         if (sumando1 != -1 && sumando2 != -1 && isAdding) {
             int resultado = sumar(sumando1, sumando2);
             model.addAttribute("resultado", resultado);
