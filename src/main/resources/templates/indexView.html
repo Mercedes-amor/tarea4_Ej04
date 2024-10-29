@@ -13,9 +13,18 @@ table td { border: 1px solid #ddd; width:5em;text-align: center; }
 </head>
 <body>
 <table>
-<tr><td class="focus">Operando1</td><td></td></tr>
-<tr><td>Operando2</td><td></td></tr>
-<tr><td>Resultado</td><td></td> </tr>
+<tr>
+    <td class="focus">Operando1</td>
+    <td th:text="${sumando1}"></td>
+</tr>
+<tr>
+    <td>Operando2</td>
+    <td th:text="${sumando2}"></td>
+</tr>
+<tr>
+    <td>Resultado</td>
+    <td th:text="${resultado}"></td> 
+</tr>
 </table><br/> <br/> <br/>
 <table>
 <tr>
