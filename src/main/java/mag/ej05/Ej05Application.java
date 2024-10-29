@@ -8,7 +8,7 @@ public class Ej05Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Ej05Application.class, args);
-		System.out.println("Hola mundo ejercicio 3.5");
+		System.out.println("Hola mundo ejercicio 3.6");
 		
 	}
 
